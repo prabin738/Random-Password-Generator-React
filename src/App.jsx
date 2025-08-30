@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import "./index.css";
+import "./app.css";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
+  let [uppercase, setUppercase] = useState(false);
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="passwordBox">
+        <h2>Random Password Generator</h2>
+        <div className="passwordboxin">
+          <input type="text" readOnly />
+          <button>Copy</button>
+        </div>
+        <div className="pass-length">
+          <label>Password Length</label>
+          <input type="number" max={20} />
+        </div>
+        <div className="pass-length">
+          <label>Include Uppercase letters</label>
+          <input type="checkbox" />
+        </div>
+        <div className="pass-length">
+          <label>Include Lowercase letters</label>
+          <input type="checkbox" />
+        </div>
+        <div className="pass-length">
+          <label>Include Numbers</label>
+          <input type="checkbox" />
+        </div>
+        <div className="pass-length">
+          <label>Include Symbols</label>
+          <input type="checkbox" />
+        </div>
+        <button className="btn">Generate Password</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
